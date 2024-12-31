@@ -1,0 +1,5 @@
+<li id="product-{{ product.id }}">
+    {{ product.name }}- {{ product.description }} - ${{ product.price }}
+    <button hx-get="{% url 'product_update' product.id %}" hx-target="#content" hx-swap="innerHTML">Edit</button>
+    <button hx-get="{% url 'product_delete' product.id %}" hx-target="#content" hx-swap="innerHTML">Delete</button>
+</li>

@@ -1,0 +1,6 @@
+<p>Are you sure you want to delete "{{ product.name }}"?</p>
+<form hx-post="{% url 'product_delete' product.id %}" hx-target="#content" hx-swap="innerHTML">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+    <button type="button" hx-get="/" hx-target="#content" hx-swap="innerHTML">No</button>
+</form>
